@@ -11,9 +11,13 @@
         <%= cl_image_tag @island.photos.first.key, height: 300, width: 400, crop: :fill, :class => "rounded-start-4" %>
       </div>
       <div id="secondary-images">
-        <% @island.photos.last(4).each do |photo| %>
-          <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
-        <% end %>
+        <ul class="list-unstyled d-flex">
+          <% @island.photos.last(4).each do |photo| %>
+          <li>
+            <%= cl_image_tag photo.key, height: 120, width: 120, crop: :fill %>
+          </li>
+          <% end %>
+        </ul>
       </div>
     </div>
   </div>
