@@ -5,7 +5,7 @@
 }
 
 .card:hover {
-  opacity: 1
+  opacity: 1;
 }
 
 .card h5 {
@@ -19,4 +19,13 @@
 
 .card .price {
   font-family: 'Roboto', sans-serif;
+}
+
+.card a {
+  text-decoration: none;
+  color: black;
+}
+
+.card a:hover {
+  color: black;
 }
