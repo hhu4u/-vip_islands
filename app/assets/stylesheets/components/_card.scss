@@ -1,0 +1,22 @@
+.card {
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  opacity: 0.8;
+}
+
+.card:hover {
+  opacity: 1
+}
+
+.card h5 {
+  font-family: 'Roboto', sans-serif;
+}
+
+.card .guests {
+  font-family: 'Roboto', sans-serif;
+  color: gray;
+}
+
+.card .price {
+  font-family: 'Roboto', sans-serif;
+}
