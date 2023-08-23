@@ -22,6 +22,10 @@ users = [user, user2]
 puts "Creating islands"
 10.times do
   file = URI.open("https://media.vogue.co.uk/photos/5e0f41c80e4ed8000870310f/4:3/w_5244,h_3933,c_limit/Private%20Island%203.jpg")
+  file2 = URI.open("https://resmark-production.s3.amazonaws.com/images/ap7ZXS/0af59325a074718306a16f6385f812b7ac146c06/medium")
+  file3 = URI.open("https://www.tahiti.com/images1/gallery/Bora-Bora-Yoga-Session12-2000x1200_65866.jpg")
+  file4 = URI.open("https://cdn.luxatic.com/wp-content/uploads/2012/04/Laucala-Island-Fiji-1.jpg")
+  file5 = URI.open("https://dbijapkm3o6fj.cloudfront.net/resources/1432,1004,1,6,4,0,600,450/-4091-/20160111122433/jet-ski-guided-tour.jpeg")
   island = Island.new(name: "Beautiful island",
                       description: "Nestled amidst breathtaking turquoise waters, the island boasts lavish beachfront villas and overwater bungalows, each equipped with private pools and decks for ultimate relaxation. Indulge in gourmet dining prepared by world-class chefs, or unwind with rejuvenating spa treatments and yoga sessions surrounded by lush nature. ",
                       size: [*500..1000].sample,
@@ -29,5 +33,9 @@ puts "Creating islands"
                       price_per_night: [*5000..10000].sample)
   island.user = users.sample
   island.photos.attach(io: file, filename: "island.jpg", content_type: "image/jpg")
+  island.photos.attach(io: file2, filename: "helicopter.jpg", content_type: "image/jpg")
+  island.photos.attach(io: file3, filename: "yoga.jpg", content_type: "image/jpg")
+  island.photos.attach(io: file4, filename: "pool.jpg", content_type: "image/jpg")
+  island.photos.attach(io: file5, filename: "watersports.jpg", content_type: "image/jpg")
   island.save!
 end
