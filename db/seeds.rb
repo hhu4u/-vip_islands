@@ -23,7 +23,7 @@ locations = %(fonualei "mata uta" peale nukuoro norfolk mehetia manuae vostok fl
               kosrae pingelap "fenua fala" nassau penrhyn)
 
 puts "Creating islands"
-locations.count.times do
+17.times do
   file = URI.open("https://media.vogue.co.uk/photos/5e0f41c80e4ed8000870310f/4:3/w_5244,h_3933,c_limit/Private%20Island%203.jpg")
   file2 = URI.open("https://resmark-production.s3.amazonaws.com/images/ap7ZXS/0af59325a074718306a16f6385f812b7ac146c06/medium")
   file3 = URI.open("https://www.tahiti.com/images1/gallery/Bora-Bora-Yoga-Session12-2000x1200_65866.jpg")
