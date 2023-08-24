@@ -1,11 +1,18 @@
 class IslandsController < ApplicationController
   def index
     @islands = Island.all
+    # The `geocoded` scope filters only islands with coordinates
   end
 
   def show
     @island = Island.find(params[:id])
     @booking = Booking.new
+    @markers = [
+      {
+        lat: @island.latitude,
+        lng: @island.longitude
+      }
+    ]
   end
 
   def index_by_user
@@ -43,6 +50,6 @@ class IslandsController < ApplicationController
   private
 
   def island_params
-    params.require(:island).permit(:name, :description, :size, :number_of_guests, :price_per_night, photos: [])
+    params.require(:island).permit(:name, :description, :size, :number_of_guests, :price_per_night, :address, photos: [])
   end
 end

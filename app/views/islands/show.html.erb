@@ -1,12 +1,12 @@
-<div class="container">
+<div class="container w-100">
   <div id="header" class="d-flex flex-column">
     <h2><%= @island.name %></h2>
     <div id="header-details" class="d-flex">
       <p class="pe-3">rating</p>
-      <p>location</p>
+      <p><%= @island.address %></p>
     </div>
   </div>
-  <div id="images">
+  <div id="images" class="w-100 mb-4">
     <div id="main-images">
       <%= cl_image_tag @island.photos.first.key, height: 300, width: 400, crop: :fill %>
     </div>
@@ -16,19 +16,23 @@
       <% end %>
     </div>
   </div>
-  <div id="details">
-    <div id="info">
+  <div id="details" class="w-100">
+    <div id="info" class="w-100">
       <div id="specs">
-        <div id="specs-header">
-          <div id="specs-details">
-            <h3><%= @island.name %></h3>
+        <div id="specs-header" class="d-flex jusify-content-between w-100 border-bottom mb-3">
+          <div id="specs-details" class="w-100">
+            <h3><%= @island.name %> hosted by <%= @island.user.first_name %></h3>
             <p>Up to <%= @island.number_of_guests %> guests</p>
           </div>
           <div class="avatar">
-
+            <% if @island.user.photo.attached? %>
+              <%= cl_image_tag @island.user.photo.key, class: "avatar", alt: "dropdown menu" %>
+            <% else %>
+              <%= image_tag "https://upload.wikimedia.org/wikipedia/commons/a/ac/Default_pfp.jpg", class: "avatar", alt: "dropdown menu" %>
+            <% end %>
           </div>
         </div>
-        <p><%= @island.description %></p>
+        <p class="border-bottom pb-3"><%= @island.description %></p>
         <div id="equipments">
 
         </div>
@@ -38,8 +42,10 @@
       </div>
     </div>
   </div>
-  <div id="map">
-
+  <div style="width: 100%; height: 600px;"
+    data-controller="map"
+    data-map-markers-value="<%= @markers.to_json %>"
+    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
 </div>
 

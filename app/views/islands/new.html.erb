@@ -1,10 +1,11 @@
 <div class="container">
-<h2>Add island</h2>
+  <h2>Add island</h2>
 
   <div class="form-island">
     <%= simple_form_for(@island) do |f| %>
       <%= f.input :name %>
       <%= f.input :description %>
+      <%= f.input :address %>
       <%= f.input :size %>
       <%= f.input :number_of_guests %>
       <%= f.input :price_per_night %>
