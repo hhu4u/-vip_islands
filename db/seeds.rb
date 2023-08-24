@@ -44,4 +44,4 @@ puts "Creating islands"
   island.save!
 end
 
-puts "Seed completed"
+puts "Seed ok"
