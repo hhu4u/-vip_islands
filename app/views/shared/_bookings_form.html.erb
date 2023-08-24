@@ -1,0 +1,14 @@
+<div class="container">
+
+  <div class="form-bookings">
+    <%= simple_form_for [islands, bookings] do |f| %>
+      <%= f.input :start_date %>
+      <%= f.input :end_date %>
+      <%= f.input :comment %>
+      <%= f.input :number_of_guests %>
+      <%= f.input :price_per_night %>
+      <%= f.submit "Add Island", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+
+</div>

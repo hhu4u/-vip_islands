@@ -10,5 +10,7 @@ Rails.application.routes.draw do
     collection do
       get :index_by_user
     end
+
+    resources :bookings, only: :create
   end
 end
