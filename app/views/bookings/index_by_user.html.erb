@@ -1,0 +1,19 @@
+<div class="container">
+<h2 class="text-center mb-4">My Bookings</h2>
+ <div class="row">
+    <% @bookings.each do |booking| %>
+      <div class="col-12 col-sm-8 col-lg-3 mb-4">
+        <div class="card">
+          <%= link_to booking_path(booking) do %>
+            <%= cl_image_tag booking.island.photos.first.key, class: "card-img-top" %>
+            <div class="card-body">
+              <h5><%= booking.island.name %></h3>
+              <p class="Dates">Dates: <%= booking.start_date %> - <%= booking.end_date %></p>
+              <p class="price"><strong>Price:</strong> <%= booking.island.price_per_night %> per night</p>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

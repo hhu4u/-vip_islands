@@ -1,0 +1,15 @@
+<div class="container">
+
+  <div class="form-booking" data-controller="price-calculation" >
+    <%= simple_form_for [@island, @booking] do |f| %>
+      <%= f.input :start_date, as: :string,
+            input_html: { data: { controller: "datepicker", datepicker_target: "start" } } %>
+      <%= f.input :end_date, as: :string,
+            input_html: { data: { controller: "datepicker", datepicker_target: "end"  } } %>
+      <%= f.input :comment %>
+      <%= f.input :number_of_guests %>
+      <%= f.submit "Book island", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+
+</div>
