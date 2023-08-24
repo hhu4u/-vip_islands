@@ -6,5 +6,9 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
-  resources :islands, only: ['new', 'create', 'index', 'show']
+  resources :islands, only: ['new', 'create', 'index', 'show'] do
+    collection do
+      get :index_by_user
+    end
+  end
 end

@@ -7,12 +7,17 @@ class IslandsController < ApplicationController
     @island = Island.find(params[:id])
   end
 
+  def index_by_user
+    @islands = Island.where(user: current_user)
+  end
+
   def new
     @island = Island.new
   end
 
   def create
     @island = Island.new(island_params)
+    @island.user = current_user
     if @island.save
       redirect_to island_path(@island)
     else
@@ -37,6 +42,6 @@ class IslandsController < ApplicationController
   private
 
   def island_params
-    params.require(:island).permit(:name, :size, :number_of_guests, :price_per_night, photos: [])
+    params.require(:island).permit(:name, :description, :size, :number_of_guests, :price_per_night, photos: [])
   end
 end
