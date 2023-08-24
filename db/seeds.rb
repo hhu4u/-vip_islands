@@ -28,6 +28,7 @@ puts "Creating islands"
   file5 = URI.open("https://dbijapkm3o6fj.cloudfront.net/resources/1432,1004,1,6,4,0,600,450/-4091-/20160111122433/jet-ski-guided-tour.jpeg")
   island = Island.new(name: "Beautiful island",
                       description: "Nestled amidst breathtaking turquoise waters, the island boasts lavish beachfront villas and overwater bungalows, each equipped with private pools and decks for ultimate relaxation. Indulge in gourmet dining prepared by world-class chefs, or unwind with rejuvenating spa treatments and yoga sessions surrounded by lush nature. ",
+                      address: "Vaiea",
                       size: [*500..1000].sample,
                       number_of_guests: [*5..15].sample,
                       price_per_night: [*5000..10000].sample)
