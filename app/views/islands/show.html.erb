@@ -1,33 +1,96 @@
-<div class="container bg-light">
-  <div id="header">
+<div class="container">
+  <div id="header" class="d-flex flex-column">
     <h2><%= @island.name %></h2>
-    <div id="header-details">
-      <div id="size">
-        <%= @island.size %>
-      </div>
+    <div id="header-details" class="d-flex">
+      <p class="pe-3">rating</p>
+      <p>location</p>
     </div>
-    <div id="images" class="d-flex">
-      <div id="main-image" class="pe-3">
-        <%= cl_image_tag @island.photos.first.key, height: 300, width: 400, crop: :fill, :class => "rounded-start-4" %>
+  </div>
+  <div id="images">
+    <div id="main-images">
+      <%= cl_image_tag @island.photos.first.key, height: 300, width: 400, crop: :fill %>
+    </div>
+    <div id="sec-images">
+      <% @island.photos.last(4).each do |photo| %>
+        <%= cl_image_tag photo.key, height: 150, width: 200, crop: :fill %>
+      <% end %>
+    </div>
+  </div>
+  <div id="details">
+    <div id="info">
+      <div id="specs">
+        <div id="specs-header">
+          <div id="specs-details">
+            <h3><%= @island.name %></h3>
+            <p>Up to <%= @island.number_of_guests %> guests</p>
+          </div>
+          <div class="avatar">
+
+          </div>
+        </div>
+        <p><%= @island.description %></p>
+        <div id="equipments">
+
+        </div>
       </div>
-      <div id="secondary-images">
-        <ul class="list-unstyled d-flex">
-          <% @island.photos.last(4).each do |photo| %>
-          <li>
-            <%= cl_image_tag photo.key, height: 120, width: 120, crop: :fill %>
-          </li>
-          <% end %>
-        </ul>
+      <div id="form">
+
       </div>
     </div>
   </div>
-  <div id="details"></div>
-    <div id="description" class="text-secondary">
-      <%= @island.description %>
-    </div>
-    <div id="booking">
-      <%# render booking form %>
+  <div id="map">
 
-    </div>
   </div>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<%# <div class="container bg-light"> %>
+  <%# <div id="header"> %>
+    <%# <h2><%= @island.name</h2>  %>
+    <%# <div id="header-details"> %>
+      <%# <div id="size"> %>
+        <%# <%= @island.size %>
+      <%# </div> %>
+    <%# </div> %>
+    <%# <div id="images" class="d-flex"> %>
+      <%# <div id="main-image" class="pe-3"> %>
+        <%# <%= cl_image_tag @island.photos.first.key, height: 300, width: 400, crop: :fill, :class => "rounded-start-4" %>
+      <%# </div> %>
+      <%# <div id="secondary-images"> %>
+        <%# <ul class="list-unstyled"> %>
+          <%# <% @island.photos.last(4).each do |photo| %>
+          <%# <li> %>
+            <%# <%= cl_image_tag photo.key, height: 120, width: 120, crop: :fill %>
+          <%# </li> %>
+          <%# <% end %>
+        <%# </ul> %>
+      <%# </div> %>
+    <%# </div> %>
+  <%# </div> %>
+  <%# <div id="details"> %>
+    <%# <div id="description" class="text-secondary"> %>
+      <%# <%= @island.description %>
+    <%# </div> %>
+    <%# <div id="booking"> %>
+      <%# render booking form %>
+
+    <%# </div> %>
+  <%# </div> %>
+<%# </div> %>

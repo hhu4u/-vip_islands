@@ -1,0 +1,11 @@
+#images {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  // gap: 5px;
+}
+
+#main-image {
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
