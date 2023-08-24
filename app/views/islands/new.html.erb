@@ -1,16 +1,17 @@
 <div class="container">
-<h2>Add island</h2>
+  <h2>Add island</h2>
 
-<div class="form-island">
-  <%= simple_form_for(@island) do |f| %>
-    <%= f.input :name %>
-    <%= f.input :description %>
-    <%= f.input :size %>
-    <%= f.input :number_of_guests %>
-    <%= f.input :price_per_night %>
-    <%= f.file_field :photos,  multiple: true %>
-    <%= f.submit "Add Island", class: "btn btn-primary" %>
-  <% end %>
-</div>
+  <div class="form-island">
+    <%= simple_form_for(@island) do |f| %>
+      <%= f.input :name %>
+      <%= f.input :description %>
+      <%= f.input :address %>
+      <%= f.input :size %>
+      <%= f.input :number_of_guests %>
+      <%= f.input :price_per_night %>
+      <%= f.file_field :photos,  multiple: true %>
+      <%= f.submit "Add Island", class: "btn btn-primary" %>
+    <% end %>
+  </div>
 
 </div>
