@@ -1,15 +1,15 @@
 <div class="container">
 
-  <div class="form-booking" data-controller="price-calculation" >
+  <div class="form-booking">
     <%= simple_form_for [@island, @booking] do |f| %>
+      <p><%= @island.price_per_night %> per night </p>
       <%= f.input :start_date, as: :string,
             input_html: { data: { controller: "datepicker", datepicker_target: "start" } } %>
       <%= f.input :end_date, as: :string,
             input_html: { data: { controller: "datepicker", datepicker_target: "end"  } } %>
       <%= f.input :comment %>
       <%= f.input :number_of_guests %>
-      <%= f.submit "Book island", class: "btn btn-primary" %>
+      <%= f.submit "Book island", class: "btn" %>
     <% end %>
   </div>
-
 </div>
