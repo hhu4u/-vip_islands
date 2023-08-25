@@ -2,43 +2,46 @@
   <div id="header" class="d-flex flex-column">
     <h2><%= @island.name %></h2>
     <div id="header-details" class="d-flex">
-      <p class="pe-3">rating</p>
       <p><%= @island.address %></p>
     </div>
   </div>
-  <div id="images" class="w-100 mb-4">
-    <div id="main-images">
-      <%= cl_image_tag @island.photos.first.key, height: 300, width: 400, crop: :fill %>
-    </div>
-    <div id="sec-images">
-      <% @island.photos.last(4).each do |photo| %>
-        <%= cl_image_tag photo.key, height: 150, width: 200, crop: :fill %>
-      <% end %>
+
+  <div class="container mb-4">
+    <div id="images">
+      <div id="main-images">
+        <%= cl_image_tag @island.photos.first.key, height: 400, width: 600, crop: :fill %>
+      </div>
+      <div id="sec-images">
+        <% @island.photos.last(4).each do |photo| %>
+          <%= cl_image_tag photo.key, height: 200, width: 300, crop: :fill %>
+        <% end %>
+      </div>
     </div>
   </div>
-  <div id="details" class="w-100">
-    <div id="info" class="w-100 d-flex">
-      <div id="specs">
-        <div id="specs-header" class="d-flex jusify-content-between w-100 border-bottom mb-3">
-          <div id="specs-details" class="w-100">
-            <h3><%= @island.name %> hosted by <%= @island.user.first_name %></h3>
-            <p>Up to <%= @island.number_of_guests %> guests</p>
-          </div>
-          <div class="avatar">
-            <% if @island.user.photo.attached? %>
-              <%= cl_image_tag @island.user.photo.key, class: "avatar", alt: "dropdown menu" %>
-            <% else %>
-              <%= image_tag "https://upload.wikimedia.org/wikipedia/commons/a/ac/Default_pfp.jpg", class: "avatar", alt: "dropdown menu" %>
-            <% end %>
-          </div>
-        </div>
-        <p class="border-bottom pb-3"><%= @island.description %></p>
-        <div id="equipments">
 
+
+  <div class="container mb-4">
+    <div id="details" class="w-100">
+      <div id="info" class="w-100 d-flex">
+        <div id="specs">
+          <div id="specs-header" class="d-flex jusify-content-between w-100 border-bottom mb-3">
+            <div id="specs-details" class="w-100">
+              <h3><%= @island.name %> hosted by <%= @island.user.first_name %></h3>
+              <p>Up to <%= @island.number_of_guests %> guests</p>
+            </div>
+            <div class="avatar">
+              <% if @island.user.photo.attached? %>
+                <%= cl_image_tag @island.user.photo.key, class: "avatar", alt: "dropdown menu" %>
+              <% else %>
+                <%= image_tag "https://upload.wikimedia.org/wikipedia/commons/a/ac/Default_pfp.jpg", class: "avatar", alt: "dropdown menu" %>
+              <% end %>
+            </div>
+          </div>
+          <p class="border-bottom pb-3"><%= @island.description %></p>
         </div>
-      </div>
-      <div id="form">
-        <%=  render "shared/booking_form",locals: { island: @island, booking: @booking} %>
+        <div id="form">
+          <%=  render "shared/booking_form",locals: { island: @island, booking: @booking} %>
+        </div>
       </div>
     </div>
   </div>

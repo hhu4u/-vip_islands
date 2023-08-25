@@ -1,3 +1,62 @@
 .form-island {
   font-family: 'Roboto', sans-serif;
 }
+
+
+.form-booking {
+  width: 100%;
+  font-family: 'Roboto', sans-serif;
+  // border: 1px solid gray;
+  // border-radius: 20px;
+  padding: 35px;
+  align-content: center;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin-left: 60px;
+
+}
+
+.form-booking .btn {
+  font-family: 'Roboto', sans-serif;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  color: white;
+  background-color: #28B5B5 ;
+  opacity: 0.8;
+}
+
+
+.form-registration {
+  width: 100%;
+  font-family: 'Roboto', sans-serif;
+  // border: 1px solid gray;
+  // border-radius: 20px;
+  padding: 20px;
+  align-content: center;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin-left: 30px;
+
+}
+
+.form-session {
+  width: 100%;
+  font-family: 'Roboto', sans-serif;
+  // border: 1px solid gray;
+  // border-radius: 20px;
+  padding: 20px;
+  align-content: center;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin-left: 30px;
+}
+
+
+.form-actions .btn {
+  font-family: 'Roboto', sans-serif;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  color: white;
+  background-color: #28B5B5 ;
+  opacity: 0.8;
+}
+
+.form-actions .btn:hover {
+  color: white;
+  opacity: 1;
+}
