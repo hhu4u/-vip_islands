@@ -1,19 +1,8 @@
 <div class="container">
 <h2 class="text-center mb-4">My Islands</h2>
- <div class="row">
-    <% @islands.each do |island| %>
-      <div class="col-12 col-sm-8 col-lg-3 mb-4">
-        <div class="card">
-          <%= link_to island_path(island) do %>
-            <%= cl_image_tag island.photos.first.key, class: "card-img-top" %>
-            <div class="card-body">
-              <h5><%= island.name %></h3>
-              <p class="guests">Number of guest(max): <%= island.number_of_guests %></p>
-              <p class="price"><strong>Price:</strong> <%= island.price_per_night %> per night</p>
-            </div>
-          <% end %>
-        </div>
-      </div>
+  <% @islands.each do |island| %>
+    <%= link_to island_path(island) do %>
+      <%= render "island", island: island %>
     <% end %>
-  </div>
+  <% end %>
 </div>
