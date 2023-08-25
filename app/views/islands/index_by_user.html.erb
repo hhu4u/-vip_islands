@@ -1,19 +1,26 @@
 <div class="container">
 <h2 class="text-center mb-4">My Islands</h2>
- <div class="row">
-    <% @islands.each do |island| %>
-      <div class="col-12 col-sm-8 col-lg-3 mb-4">
-        <div class="card">
-          <%= link_to island_path(island) do %>
-            <%= cl_image_tag island.photos.first.key, class: "card-img-top" %>
-            <div class="card-body">
-              <h5><%= island.name %></h3>
-              <p class="guests">Number of guest(max): <%= island.number_of_guests %></p>
-              <p class="price"><strong>Price:</strong> <%= island.price_per_night %> per night</p>
+  <% @islands.each do |island| %>
+    <%= link_to island_path(island) do %>
+      <div class="cardv2">
+        <%= cl_image_tag island.photos.first.key, class: "card-img-top" %>
+        <div class="cardv2-content">
+          <div class="cardv2-header">
+            <h5><%= island.name %></h5>
+            <div class="crud">
+              <%= link_to edit_island_path(island) do %>
+                <i class="fa-regular fa-pen-to-square" style="color: #000000;"></i>
+              <% end %>
+              <%= link_to island_path(island),   data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
+                <i class="fa-solid fa-trash" style="color: #000000;"></i>
+              <% end %>
             </div>
-          <% end %>
+          </div>
+          <div class="cardv2-details">
+            <%= island.description %>
+          </div>
         </div>
       </div>
     <% end %>
-  </div>
+  <% end %>
 </div>

@@ -45,6 +45,7 @@ class IslandsController < ApplicationController
   def destroy
     @island = Island.find(params[:id])
     @island.destroy
+    redirect_to index_by_user_islands_path
   end
 
   private
